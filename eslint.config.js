@@ -10,6 +10,13 @@ export default [
 	prettier,
 	...svelte.configs['flat/prettier'],
 	{
+		files: ['**/*.svelte'],
+		plugins: {
+			svelte,
+		},
+		processor: 'svelte/svelte',
+	},
+	{
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -18,6 +25,6 @@ export default [
 		}
 	},
 	{
-		ignores: ['build/', '.svelte-kit/', 'dist/']
+		ignores: ['build/**', '.svelte-kit/**', 'dist/**']
 	}
 ];
